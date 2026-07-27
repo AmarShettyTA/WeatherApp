@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-press-start: 'Press Start 2P', monospace;
+  --font-silkscreen: 'Silkscreen', monospace;
+  --font-vt323: 'VT323', monospace;
+  --font-dot: 'DotGothic16', sans-serif;
+}
+
+.font-pixel-heading {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-silkscreen {
+  font-family: 'Silkscreen', monospace;
+}
+
+.font-vt323 {
+  font-family: 'VT323', monospace;
+}
+
+.font-dot {
+  font-family: 'DotGothic16', sans-serif;
+}
+
+/* Custom Clean Minimalism Pixel & Brutalist Box Shadows */
+.shadow-brutal-white {
+  box-shadow: 4px 4px 0px #ffffff;
+}
+
+.shadow-brutal-white-lg {
+  box-shadow: 8px 8px 0px #ffffff;
+}
+
+.shadow-brutal-emerald {
+  box-shadow: 8px 8px 0px #10b981;
+}
+
+.shadow-brutal-emerald-dark {
+  box-shadow: 8px 8px 0px #064e3b;
+}
+
+.shadow-brutal-zinc {
+  box-shadow: 4px 4px 0px #27272a;
+}
+
+/* CRT Scanline Effect */
+.crt-overlay {
+  position: relative;
+}
+
+.crt-overlay::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+  z-index: 40;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+/* Custom retro pixel scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+  border: 1px solid #27272a;
+}
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border: 1px solid #ffffff;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #34d399;
+}
+
+/* Pixel art blinking cursor / animation */
+@keyframes pixel-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-pixel-blink {
+  animation: pixel-blink 1s step-start infinite;
+}
+
+@keyframes pixel-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-pixel-float {
+  animation: pixel-float 2.5s ease-in-out infinite;
+}
+
+

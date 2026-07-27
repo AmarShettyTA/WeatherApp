@@ -1,0 +1,6 @@
+{
+  "name": "Pixel Weather Intelligence",
+  "description": "A retro 8-bit weather forecasting and smart activity planning application built with Open-Meteo.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
