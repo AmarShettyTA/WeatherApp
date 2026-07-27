@@ -73,6 +73,43 @@ Follow these instructions if you have cloned or forked this repository to run th
 
 ---
 
+## 🚀 Deployment & Help Guide
+
+### 1. Exporting / Syncing from Google AI Studio to GitHub
+If you are building or iterating on this project inside **Google AI Studio Build**:
+1. Locate the **Header / Settings menu** in the top right corner of the AI Studio workspace.
+2. Click on **Export / GitHub** option.
+3. Select **Export to GitHub** to push the codebase directly to a new or existing repository on your GitHub account, or select **Export as ZIP** to download the repository archive locally.
+4. If synced with GitHub, any further pushes or updates can automatically trigger your connected deployment pipelines.
+
+---
+
+### 2. Deploying to Cloudflare Pages
+This application is built as a static Single Page Application (SPA) using Vite and React, making it straightforward to host on **Cloudflare Pages**.
+
+#### Method A: Git Integration (Recommended)
+1. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/) and navigate to **Workers & Pages**.
+2. Click **Create Application** > **Pages** > **Connect to Git**.
+3. Select your GitHub repository where you exported/pushed the code.
+4. Configure the build settings:
+   * **Framework preset**: `Vite` (or `None`)
+   * **Build command**: `npm run build`
+   * **Build output directory**: `dist`
+   * **Node.js version** (Environment Variables if needed): `NODE_VERSION` = `18` or `20`
+5. Click **Save and Deploy**. Cloudflare Pages will build the app and give you a `*.pages.dev` production URL.
+
+#### Method B: Direct Upload via Wrangler CLI
+1. Build the static assets locally:
+   ```bash
+   npm run build
+   ```
+2. Deploy the `dist` folder directly using Wrangler:
+   ```bash
+   npx wrangler pages deploy dist --project-name=pixel-weather-os
+   ```
+
+---
+
 ## 🏗️ Tech Stack
 
 * **Frontend Framework**: React 19 with TypeScript
